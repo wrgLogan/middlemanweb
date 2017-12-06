@@ -1,0 +1,38 @@
+.page{
+    overflow-x: hidden;
+}
+
+.banner-container{
+    width: 100%;
+    width: 100vw;
+    height: 62.5vw;
+    overflow: hidden;
+}
+
+.banner{
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    width: 100%;
+    width: 100vw;
+    height: 62.5vw;
+    transition: transform 1s ease-out;
+    transform: scale(1.1);
+}
+
+.banner1{
+    background-image: url('../../assets/image/Page1.jpg');  
+    transform: scale(1); 
+}
+
+.banner2{
+    background-image: url('../../assets/image/Page2.jpg');
+}
+
+.banner3{
+    background-image: url('../../assets/image/Page3.jpg');
+}
+
+.banner[active]{
+    transform: scale(1);
+}
+

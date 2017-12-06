@@ -1,73 +1,17 @@
 <template>
   <div id="app">
-    <el-container>
-      <!-- 上面的头部 -->
-      <el-header class="top-header">
-        <h1 class="proj-name">{{ projName }}</h1>
-        <div class="setting">
-          <el-dropdown>
-            <i class="el-icon-setting" style="margin-right: 15px"></i>
-            <el-dropdown-menu slot="dropdown">
-              <el-dropdown-item>查看</el-dropdown-item>
-              <el-dropdown-item>退出</el-dropdown-item>
-              <!-- <el-dropdown-item>删除</el-dropdown-item> -->
-            </el-dropdown-menu>
-          </el-dropdown>
-          <span>管理员</span>
-        </div>
-        
-      </el-header>
-      
-      <el-container>
-        <!-- 侧边导航 -->
-        <el-aside width="170px">
-          <el-menu
-            default-active="1"
-            class="el-menu-vertical-demo"
-            >
-          
-            <el-menu-item index="1" @click="goTo('userlist')">
-              <i class="el-icon-location"></i>
-              <span>用户管理</span>
-            </el-menu-item>
-            <el-menu-item index="2">
-              <i class="el-icon-menu"></i>
-              <span>项目管理</span>
-            </el-menu-item>
-            <el-menu-item index="3">
-              <i class="el-icon-document"></i>
-              <span>文件管理</span>
-            </el-menu-item>
-            <el-menu-item index="4">
-              <i class="el-icon-bell"></i>
-              <span>消息管理</span>
-            </el-menu-item>
-          </el-menu>
-        </el-aside>
-        <!-- 中间内容区域 -->
-        <el-main>
-          <transition :name="animation">
-            <router-view class="page-container"></router-view>
-          </transition>
-        </el-main>
-
-      </el-container>
-
-    </el-container>
-    <transition name="fade">
-      <login-modal :isShow="showLogin"></login-modal>
+    <transition :name="animation">
+      <router-view class="page-container"></router-view>
     </transition>
+    
   </div>
 </template>
 <script>
-import loginModal from "@/components/loginModal.vue"
 
 export default {
   name: "app",
   data: function() {
     return {
-      projName: '藤蓝后台管理系统',
-      showLogin: false
     };
   },
   computed: {
@@ -76,17 +20,9 @@ export default {
     }
   },
   components:{
-    loginModal
   },
   mounted(){
-    var AV = this.AV;
-
-    AV.User.logIn('admin', '123456').then(function(user) {
-      console.log(user);
-      sessionStorage.setItem('token', user.sessionToken);
-      AV.user = user;
-      this.showLogin = false;
-    });
+    
     
   },
   methods: {
@@ -122,7 +58,9 @@ body {
   position: absolute;
   left: 0px;
   top: 0px;
+  bottom: 0px;
   width: 100%;
+  overflow: auto;
 }
 
 .el-header {
