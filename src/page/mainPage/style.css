@@ -3,20 +3,23 @@
 }
 
 .banner-container{
+    position: relative;
     width: 100%;
     width: 100vw;
     height: 62.5vw;
     overflow: hidden;
+    margin-bottom: -3px;
 }
 
 .banner{
-    background-size: auto 100%;
+    position: relative;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     width: 100%;
     width: 100vw;
     height: 62.5vw;
-    transition: transform 1s ease-out;
-    transform: scale(1.1);
+    /* transition: transform 1s ease-out; */
+    /* transform: scale(1); */
 }
 
 .banner1{
@@ -30,9 +33,69 @@
 
 .banner3{
     background-image: url('../../assets/image/Page3.jpg');
+    cursor: pointer;
+}
+
+.banner4{
+    background-image: url('../../assets/image/Page4.jpg');
+}
+
+.banner5{
+    background-image: url('../../assets/image/Page5_bg.jpg');
+}
+
+.banner-container .btn{
+    position: absolute;
+    left: 15.5%;
+    left: 15.5vw;
+    top: 50%;
+    top: 32vw;
+    cursor: pointer;
+    width: 38%;
+    width: 38vw;
 }
 
 .banner[active]{
     transform: scale(1);
 }
 
+.block{
+    float: left;
+    width: 100%;
+}
+
+.erweima-container{
+    margin-bottom: -6px;
+}
+
+.erweima-container img{
+    width: 100%;
+}
+
+.footer{
+    margin: 30px auto ;
+    margin-bottom: 80px;
+}
+
+.footer ul.about{
+    margin: 0 auto;
+    margin-left: 84px;
+    width: 1200px;
+}
+
+.footer ul.about li{
+    display: inline-block;
+    width: 250px;
+    vertical-align: top;
+    line-height: 26px;
+}
+
+.footer ul.about li h3{
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.copyright{
+    text-align: center;
+    margin-top: 200px;
+}
